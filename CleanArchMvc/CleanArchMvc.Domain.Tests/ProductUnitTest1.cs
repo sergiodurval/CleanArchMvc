@@ -47,6 +47,13 @@ namespace CleanArchMvc.Domain.Tests
             action.Should().NotThrow<CleanArchMvc.Domain.Validation.DomainExceptionValidation>();
         }
 
+        [Fact(DisplayName = "Must not create a product with null image name and throw null exception")]
+        public void CreateProduct_WithNullImageName_NullException()
+        {
+            Action action = () => new Product(1, "Product name", "product description", 9.99m, 99, null);
+            action.Should().NotThrow<NullReferenceException>();
+        }
+
         [Fact(DisplayName = "Must not create a product with empty image name")]
         public void CreateProduct_WithEmptyImageName_NoDomainException()
         {
