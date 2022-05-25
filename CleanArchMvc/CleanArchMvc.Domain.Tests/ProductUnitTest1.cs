@@ -62,5 +62,14 @@ namespace CleanArchMvc.Domain.Tests
             action.Should().Throw<CleanArchMvc.Domain.Validation.DomainExceptionValidation>()
                 .WithMessage("Invalid stock value");
         }
+
+        [Theory(DisplayName = "Must not create a product with invalid price value")]
+        [InlineData(-99.9)]
+        public void CreateProduct_InvalidProcuctValue_ExceptionDomainNegativeValue(decimal price)
+        {
+            Action action = () => new Product(1, "Product name", "product description",price,1, "");
+            action.Should().Throw<CleanArchMvc.Domain.Validation.DomainExceptionValidation>()
+                .WithMessage("Invalid price value");
+        }
     }
 }
