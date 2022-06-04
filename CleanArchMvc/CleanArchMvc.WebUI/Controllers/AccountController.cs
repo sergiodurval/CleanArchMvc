@@ -70,7 +70,7 @@ namespace CleanArchMvc.WebUI.Controllers
         public async Task<IActionResult> Logout()
         {
             await _authenticate.Logout();
-            return Redirect("Account/Login");
+            return RedirectToAction(nameof(Login));
         }
     }
 }
