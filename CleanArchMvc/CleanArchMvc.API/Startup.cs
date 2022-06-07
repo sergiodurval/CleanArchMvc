@@ -44,7 +44,7 @@ namespace CleanArchMvc.API
             }
 
             app.UseHttpsRedirection();
-
+            app.UseStatusCodePages();
             app.UseRouting();
 
             app.UseAuthorization();
