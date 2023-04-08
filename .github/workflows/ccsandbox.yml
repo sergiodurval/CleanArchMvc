@@ -1,0 +1,11 @@
+accounts:
+  "111582602281":{}
+  
+  account-blacklist:
+    - "000000000000" # production
+    
+regions:
+- "us-east-2"
+
+
+
